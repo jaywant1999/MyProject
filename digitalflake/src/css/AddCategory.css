@@ -1,0 +1,70 @@
+.addcat-div{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    margin-top: 40px;
+}
+
+.addcatinput{
+    display: flex;
+    height: 40px;
+    width: 320px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.addcatlabel{
+    display: flex;
+    padding-left: 15px;
+}
+
+.subdiv{
+    display: flex;
+    flex-direction: column;
+}
+
+#heading{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.addcat-main-div{
+    margin: 10px;
+    box-shadow: 0px 0px 2px 3px rgb(206, 204, 204);
+    padding: 15px;
+    border-radius: 5px;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.addcathead{
+    display: flex;
+    padding-left: 5px;
+    margin-top: 15px;
+}
+
+#botbuttons{
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    margin: 30px;
+    margin-bottom: -50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.botbut{
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid;
+}
+
+.botbut:hover{
+    background: #5e015c;
+    color: aliceblue;
+}

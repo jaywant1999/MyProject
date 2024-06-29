@@ -1,0 +1,50 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+#topbar{
+   background: #5e015c;
+   display: flex;
+   align-items: center;
+    
+}
+
+ #top-logo{
+   left: 0;
+   padding: 20px;
+ }
+
+ .app-navbar{
+    width: 300px;
+    height: 98vh;    
+ }
+
+ .pages{
+    width: 73%;
+    min-height: 98vh;
+    margin-left: 410px;
+    margin-bottom: 20px; 
+    margin-top: 125px;
+    top: 0;
+    position: absolute;
+ }
+
+ #profile{
+   height: 40px;
+   width: 40px;
+   right: 0;
+   position: absolute;
+   margin-right: 40px;
+   color: white;
+ }
+
+ #aprofile{
+   height: 50px;
+   width: 80px;
+   margin-right: -10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   right: 0;
+   position: absolute;
+ }

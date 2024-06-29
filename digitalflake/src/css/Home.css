@@ -1,0 +1,40 @@
+
+.homediv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    flex-direction: column;
+}
+
+#homelogo{
+   margin: 0;
+   padding: 0;
+   height: 150px;
+}
+
+#para{
+    font-size: 30px;
+}
+
+#logbtn{
+    top: 0;
+    right: 0;
+    position: absolute;
+    margin-right: 20px;
+    margin-top: -10px;
+    height: 40px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 5px;
+    color: rgb(156, 5, 5);
+    font-weight:300;
+    border: 1px solid rgb(156, 5, 5);
+    box-shadow: 0px 3px 2px 1px rgb(211, 211, 211);
+}
+
+#logbtn:hover{
+    background: rgb(156, 5, 5);
+    color: white;
+    border: 1px solid black;
+}
