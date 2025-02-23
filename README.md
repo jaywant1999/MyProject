@@ -1,2 +1,2 @@
 # MyProject
-This is the repository for practice projects.
+This is the repository only for practice projects.
