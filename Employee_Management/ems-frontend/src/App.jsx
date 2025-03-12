@@ -1,12 +1,15 @@
  
 import './App.css'
+import ListEmployee from './components/ListEmployee'
 
 function App() {
    
 
   return (
     <>
-      <h1>Hello world</h1>
+      <div className='maindiv'>
+        <ListEmployee/>
+      </div>
     </>
   )
 }
