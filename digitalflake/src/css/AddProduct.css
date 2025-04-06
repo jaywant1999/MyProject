@@ -46,3 +46,10 @@
     background: #5e015c;
     color: aliceblue;
 }
+
+#arrow{
+    background: #5e015c;
+    border-radius: 20px;
+    padding: 8px;
+    color: aliceblue;
+}

@@ -11,11 +11,16 @@
     width: 320px;
     border-radius: 5px;
     border: 1px solid black;
+    padding-left: 10px;
 }
 
 .addcatlabel{
     display: flex;
-    padding-left: 15px;
+    padding-left: 10px;
+    padding: 5px;
+    font-size: large;
+
+    font-weight:500;
 }
 
 .subdiv{
@@ -66,5 +71,12 @@
 
 .botbut:hover{
     background: #5e015c;
+    color: aliceblue;
+}
+
+#arrow{
+    background: #5e015c;
+    border-radius: 20px;
+    padding: 8px;
     color: aliceblue;
 }

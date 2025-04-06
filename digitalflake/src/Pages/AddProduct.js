@@ -14,7 +14,7 @@ const AddProduct = () => {
       <div className="addpromain">
         <div className="addprohead">
           <h3 id="heading">
-            <FaArrowLeftLong onClick={handleBackToAddPro} />
+            <FaArrowLeftLong onClick={handleBackToAddPro} id="arrow"/>
             Add Product
           </h3>
         </div>

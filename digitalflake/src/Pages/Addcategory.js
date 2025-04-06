@@ -16,7 +16,7 @@ const AddCategory = () => {
         <div className="addcathead">
 
           <h3 id="heading">
-            <FaArrowLeftLong onClick={handleBackToCat}/>
+            <FaArrowLeftLong onClick={handleBackToCat} id="arrow"/>
             Add Category
           </h3>
 
@@ -43,7 +43,7 @@ const AddCategory = () => {
 
         <div id="botbuttons">
           <button className="botbut">Cancle</button>
-          <button className="botbut">Save</button>
+          <button className="botbut" >Save</button>
         </div>
 
       </div>
