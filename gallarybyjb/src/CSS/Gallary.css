@@ -1,0 +1,31 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 20px;
+  justify-content: center;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.gallery-item {
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  min-height: 400px; /* set a fixed height */
+  width: auto;
+  max-width: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 20px rgb(95, 3, 14);
+  transition: transform 0.01s ease-in-out;
+}
