@@ -1,32 +1,72 @@
 package com.jb.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class User {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
 	private String firstName;
+	
 	private String lastName;
+	
+	@Column(unique = true)
 	private String email;
+	
 	private String password;
-
+	
+	private String gender;	
+	
+	@ElementCollection
+	private List<Integer> followers = new ArrayList<>(); 
+	
+	@ElementCollection
+	private List<Integer>  followings = new ArrayList<>(); 
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(
+	    name = "user_saved_posts",  
+	    joinColumns = @JoinColumn(name = "user_id"),
+	    inverseJoinColumns = @JoinColumn(name = "post_id")
+	)
+	@JsonIgnore
+	private List<Post> savedPost = new ArrayList<>();	
+	
 	public User() {
-		// to auto generated constructor
+		 
 	}
-
-	public User(Integer id,String firstName, String lastName, String email, String password) {
+ 
+	public User(Integer id, String firstName, String lastName, String email, String password, String gender,
+			List<Integer> followers, List<Integer> followings, List <Post> savedPost){
 		super();
-		this.id=id;
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
+		this.gender= gender;
+		this.followers = followers;
+		this.followings = followings;
+		this.savedPost=savedPost;
 	}
-
-	
+ 
 	public Integer getId() {
 		return id;
 	}
@@ -66,5 +106,39 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender= gender;
+	}
+
+	public List<Integer> getFollowers() {
+		return followers;
+	}
+
+	public void setFollowers(List<Integer> followers) {
+		this.followers = followers;
+	}
+
+	public List<Integer> getFollowings() {
+		return followings;
+	}
+
+	public void setFollowings(List<Integer> followings) {
+		this.followings = followings;
+	}
+
+	public List<Post> getSavedPost() {
+		return savedPost;
+	}
+
+	public void setSavedPost(List<Post> savedPost) {
+		this.savedPost = savedPost;
+	}
+	
+	
 
 }
