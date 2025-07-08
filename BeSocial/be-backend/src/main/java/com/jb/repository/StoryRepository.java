@@ -4,8 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.jb.models.Story;
-import com.jb.models.User;
+import com.jb.models.Story; 
 
 public interface StoryRepository extends JpaRepository<Story, Integer>{
 		

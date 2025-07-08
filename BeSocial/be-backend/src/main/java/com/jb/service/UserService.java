@@ -1,7 +1,6 @@
 package com.jb.service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.List; 
 
 import com.jb.models.User;
 

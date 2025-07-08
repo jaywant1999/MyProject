@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jb.dto.CommentRequestDto;
-import com.jb.models.Comment;
-import com.jb.models.Post;
+import com.jb.models.Comment; 
 import com.jb.models.User;
 import com.jb.response.ApiResponse;
 import com.jb.service.CommentService;
