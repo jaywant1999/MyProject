@@ -26,26 +26,26 @@ export const navigationMenu = [
   {
     title: "Notification",
     icon: <NotificationsIcon />,
-    path: "/",
+    path: "/notification",
   },
   {
     title: "Message",
     icon: <MessageIcon />,
-    path: "/",
+    path: "/message",
   },
   {
     title: "List",
     icon: <ListAltIcon />,
-    path: "/",
+    path: "/list",
   },
   {
     title: "Communities",
     icon: <GroupIcon />,
-    path: "/",
+    path: "/communities",
   },
   {
     title: "Profile",
     icon: <AccountCircleIcon />,
-    path: "/profile/:id",
+    path: "/profile",
   },
 ];

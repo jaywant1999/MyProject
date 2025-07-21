@@ -44,7 +44,7 @@ public class UserController {
 	// Updating data
 	@PutMapping("/api/users")
 	public User updateUser(@RequestHeader("Authorization") String jwt, @RequestBody User user) throws Exception {
-
+  
 		User reqUser = userService.findUserByJwt(jwt);
 		User updatedUser = userService.updateUser(user, reqUser.getId());
 		return updatedUser;
@@ -65,7 +65,7 @@ public class UserController {
 
 	}
 
-	@GetMapping("/api/users/profile")
+	@GetMapping("/auth/users/profile")
 	public User getUserFromToken(@RequestHeader("Authorization") String jwt) {
 
 		User user = userService.findUserByJwt(jwt);

@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, Grid } from "@mui/material";
-import Login from "./Login";
-// import Register from "./Register";
+import Login from "./Login"; 
 import img1 from "../../assets/Landing.jpg";
 import { Route, Routes } from "react-router-dom";
 import Register from "./Register";

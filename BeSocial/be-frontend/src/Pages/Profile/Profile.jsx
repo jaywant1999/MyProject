@@ -2,6 +2,8 @@ import React from "react";
 import { AppBar, Avatar, Box, Button, Card, Tab, Tabs } from "@mui/material";
 import PostCard from "../../components/Post/PostCard";
 import UserReelsCard from "../../components/Reels/UserReelsCard";
+import ProfileModal from "./ProfileModal";
+import { useSelector } from "react-redux";
 
 const tabs = [
   { value: "post", name: "Post" },
@@ -14,8 +16,13 @@ const posts = [1, 1, 1, 1];
 const reels = [1, 1, 1, 1];
 const savedPost = [1, 1];
 const repost = [1, 1];
+
 const Profile = () => {
   const [value, setValue] = React.useState("post");
+  const [open, setOpen] = React.useState(false);
+  const { auth } = useSelector((store) => store);
+  const handleOpenProfileModal = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -38,7 +45,11 @@ const Profile = () => {
             src="https://cdn.pixabay.com/photo/2020/05/11/15/38/tom-5158824_1280.png"
           />
           {true ? (
-            <Button sx={{ borderRadius: "20px" }} variant="outlined">
+            <Button
+              sx={{ borderRadius: "20px" }}
+              variant="outlined"
+              onClick={handleOpenProfileModal}
+            >
               Edit Profile
             </Button>
           ) : (
@@ -49,8 +60,10 @@ const Profile = () => {
         </div>
         <div className="p-5">
           <div>
-            <h1 className="py-1 font-bold text-xl">I am Khatarnak</h1>
-            <p>@iamkhatarnak</p>
+            <h1 className="py-1 font-bold text-xl">
+              {auth.user?.firstName + " " + auth.user?.lastName}
+            </h1>
+            <p>@{auth.user?.firstName.toLowerCase() + "_" + auth.user?.lastName.toLowerCase()}</p>
           </div>
           <div className="flex items-center gap-10 py-3 w-full">
             <span>20 Posts</span>
@@ -72,8 +85,8 @@ const Profile = () => {
                 variant="fullWidth"
                 aria-label="full width tabs example"
               >
-                {tabs.map((item) => (
-                  <Tab label={item.name} value={item.value} />
+                {tabs.map((item, index) => (
+                  <Tab key={index} label={item.name} value={item.value} />
                 ))}
               </Tabs>
             </AppBar>
@@ -81,32 +94,44 @@ const Profile = () => {
           <div className="flex justify-center p-1">
             {value === "post" ? (
               <div className="space-y-5 w-[80%] my-10">
-                {posts.map((item) => (
-                  <div className="border-slate-100 border rounded-sm ">
+                {posts.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border-slate-100 border rounded-sm "
+                  >
                     <PostCard />
                   </div>
                 ))}
               </div>
             ) : value === "reels" ? (
               <div className="flex flex-wrap   ">
-                {reels.map((item) => (
-                  <div className="border-slate-100 border rounded-sm ">
+                {reels.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border-slate-100 border rounded-sm "
+                  >
                     <UserReelsCard />
                   </div>
                 ))}
               </div>
             ) : value === "saved" ? (
               <div className="space-y-5 w-[80%] my-10">
-                {savedPost.map((item) => (
-                  <div className="border-slate-100 border rounded-sm ">
+                {savedPost.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border-slate-100 border rounded-sm "
+                  >
                     <PostCard />
                   </div>
                 ))}
               </div>
             ) : value === "repost" ? (
               <div className="flex flex-wrap ">
-                {repost.map((item) => (
-                  <div className="border-slate-100 border rounded-sm ">
+                {repost.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border-slate-100 border rounded-sm "
+                  >
                     <UserReelsCard />
                   </div>
                 ))}
@@ -117,6 +142,10 @@ const Profile = () => {
           </div>
         </section>
       </div>
+
+      <section>
+        <ProfileModal open={open} handleClose={handleClose} />{" "}
+      </section>
     </Card>
   );
 };

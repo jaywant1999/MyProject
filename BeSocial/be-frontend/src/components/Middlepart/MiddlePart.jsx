@@ -23,8 +23,8 @@ const MiddlePart = () => {
           </Avatar>
           <p>New</p>
         </div>
-        {story.map((item) => (
-          <StoryCircle />
+        {story.map((item, index) => (
+          <StoryCircle key={index} />
         ))}
       </section>
 
@@ -63,8 +63,8 @@ const MiddlePart = () => {
       </Card>
 
       <div className="mt-5 space-y-5">
-        {post.map((item) => (
-          <PostCard />
+        {post.map((item,index) => (
+          <PostCard key={index} />
         ))}
       </div>
     </div>

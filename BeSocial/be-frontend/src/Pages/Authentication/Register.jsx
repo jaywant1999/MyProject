@@ -8,9 +8,9 @@ import {
   TextField,
 } from "@mui/material";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { registerUserAction } from "../../Redux/Auth/auth.action";
+import { registerUserAction } from "../../ReduxComponents/Auth/auth.action";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const initialValues = {
   firstName: "",
@@ -142,7 +142,7 @@ const Register = () => {
       </Formik>
       <div className="flex gap-5 items-center justify-center pt-5">
         <p>You are already register ?</p>
-        <Button onClick={()=>navigate("/login")}>Login</Button>
+        <Button onClick={() => navigate("/login")}>Login</Button>
       </div>
     </>
   );
