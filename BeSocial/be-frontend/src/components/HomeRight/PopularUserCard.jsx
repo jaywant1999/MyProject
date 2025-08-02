@@ -4,20 +4,20 @@ import React from "react";
 
 const PopularUserCard = () => {
   return (
-    <div  >
+    <div>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: red[500],width:"2rem" ,height:"2rem" }} className="text-[90%]" aria-label="recipe">
             J
           </Avatar>
         }
         action={
-          <Button size="small" className="text-sm" variant="outlined">
+          <Button size="small" className="text-[90%]" variant="outlined">
             Follow
           </Button>
         }
-        title={<p className="text-sm  font-semibold">User Name</p>}
-        subheader={<p className="text-sm text-gray-500">Follows You</p>}
+        title={<p className="text-[90%] font-semibold">User Name</p>}
+        subheader={<p className="text-[90%] text-gray-500">Follows You</p>}
       />
     </div>
   );

@@ -6,6 +6,8 @@
   import { useDispatch, useSelector } from "react-redux";
   import { useEffect } from "react";
   import { getProfileAction } from "./ReduxComponents/Auth/auth.action";
+import { ThemeProvider } from "@mui/material";
+import { darkTheme } from "./theme/theme";
  
   function App() {
     const dispatch = useDispatch();
@@ -19,7 +21,8 @@
     }, [jwt,dispatch]);
 
     return (
-      <div>
+      <ThemeProvider theme={darkTheme}>
+    
         <Routes>
           <Route
             path="/*"
@@ -27,7 +30,8 @@
           />
           <Route path="/message" element={<Message />} />
         </Routes>
-      </div>
+    
+      </ThemeProvider>
     );
   }
 

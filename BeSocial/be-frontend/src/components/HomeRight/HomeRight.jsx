@@ -7,15 +7,15 @@ const popularUser = [1, 1, 1, 1, 1];
 
 const HomeRight = () => {
   return (
-    <div className="px-2 sm:px-3 md:px-4 lg:pr-5">
+    <div className="px-2 sm:px-3 md:px-4 lg:pr-5 ">
       <SearchUser />
 
       <Card className="p-3 sm:p-4 md:p-5 mt-2">
         <div className="flex justify-between sm:w-full items-center pb-4">
-          <p className="text-sm sm:text-sm md:text-sm font-semibold opacity-70">
+          <p className="text-[80%] font-semibold opacity-70">
             Suggestions for you
           </p>
-          <p className="text-base sm:text-sm md:text-lg font-semibold opacity-95 cursor-pointer">
+          <p className="text-base text-[90%] font-semibold opacity-95 cursor-pointer">
             View All
           </p>
         </div>

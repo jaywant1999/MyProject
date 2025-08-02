@@ -11,8 +11,7 @@ const tabs = [
   { value: "saved", name: "Saved" },
   { value: "repost", name: "Repost" },
 ];
-
-const posts = [1, 1, 1, 1];
+ 
 const reels = [1, 1, 1, 1];
 const savedPost = [1, 1];
 const repost = [1, 1];
@@ -20,7 +19,7 @@ const repost = [1, 1];
 const Profile = () => {
   const [value, setValue] = React.useState("post");
   const [open, setOpen] = React.useState(false);
-  const { auth } = useSelector((store) => store);
+  const { auth,post } = useSelector((store) => store);
   const handleOpenProfileModal = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -94,12 +93,12 @@ const Profile = () => {
           <div className="flex justify-center p-1">
             {value === "post" ? (
               <div className="space-y-5 w-[80%] my-10">
-                {posts.map((item, index) => (
+                {post.posts?.filter((post) => post.user?.id === auth.user?.id).map((item, index) => (
                   <div
                     key={index}
                     className="border-slate-100 border rounded-sm "
                   >
-                    <PostCard />
+                    <PostCard key={index} item={item}/>
                   </div>
                 ))}
               </div>

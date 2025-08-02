@@ -35,9 +35,11 @@ public class MessageController {
 	}
 	
 	@GetMapping("/api/messages/chat/{chatId}")
-	public List<Message> getChatsMessage(@PathVariable Integer chatId ) throws Exception{
+	public List<Message> getChatsMessage(@PathVariable Integer chatId,@RequestHeader ("Authorization") String jwt ) throws Exception{
+		User user = userService.findUserByJwt(jwt);
+
+		List<Message> messages = messageService.findChatsMessages(chatId);
 		
-		
-		return messageService.findChatsMessages(chatId);
+		return messages;
 	}
 }

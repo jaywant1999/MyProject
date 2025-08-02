@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 
 import com.jb.models.User;
 
+import lombok.Data;
+
+@Data
 public class UserDto {
     private Integer id;
     private String firstName;
