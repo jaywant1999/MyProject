@@ -1,7 +1,8 @@
 .navbar{
+  
     display: flex;
     flex-direction: row;
-    color: white;
+    color: rgb(0, 0, 0);
     height: 60px; 
     align-items: center;
     gap: 100px;
@@ -12,7 +13,7 @@
     padding: 5px;
     padding-left: 15px;
     justify-content: center;
-    
+    margin-left: 5px;
 }
 
  
@@ -35,25 +36,36 @@
     font-style: italic;
     font-family:cursive;
     display: inline-block;
-    
+    font-weight: bold;
   }
 
   .navbar li :hover{
     border-bottom:2px solid grey;
     transform: scale(1.2); /* adds visual size without affecting layout */
     transition: transform 0.1s ease-in-out;
-  
+    font-weight: bolder;
   }
 
   .outer{
+    background: #fff;
     display: flex;
-    width: 100%;
-    background: #000;
-    flex-direction: row;
-    border-bottom: 1px double rgb(58, 57, 57);
+    width: 100%; 
+    flex-direction: row; 
     padding: 5px;
-    justify-content: center;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     z-index: 1000;
+  }
+
+  .upbtn{
+    right: 0;
+    margin: 20px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    background: #0561d8;
+    font-weight: bold;
+    font-size: medium;
+    color: #fff;
   }

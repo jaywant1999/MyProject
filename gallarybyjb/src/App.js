@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Gallary from "./Pages/Gallary";
 import Footer from "./Component/Footer";
 import Contact from "./Pages/Contact";
+import Upload from "./Pages/Upload";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/gallary" element={<Gallary />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/upload" element={<Upload />} />
         </Routes>
       </BrowserRouter>
       <div className="footer">
